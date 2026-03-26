@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All CSS Units - Complete Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .unit-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 4px solid;
+            transition: transform 0.3s;
+        }
+        
+        .unit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .unit-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-family: monospace;
+        }
+        
+        .demo-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .formula {
+            background: #e9ecef;
+            padding: 5px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .relative-demo {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        
+        .parent-box {
+            background: #e9ecef;
+            padding: 20px;
+            margin: 10px 0;
+            border: 2px dashed #667eea;
+        }
+        
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        button:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📐 Complete CSS Units Guide</h1>
+        
+        <!-- 1. Absolute Units -->
+        <div class="section">
+            <h2>1. Absolute Units (Fixed - Physical Measurements)</h2>
+            <div class="demo-grid">
+                <div class="unit-card" style="border-left-color: #ff6b6b;">
+                    <div class="unit-name">px - Pixels</div>
+                    <div class="demo-box" style="width: 100px;">100px wide</div>
+                    <div class="demo-box" style="width: 200px;">200px wide</div>
+                    <code>width: 200px;</code>
+                    <div class="formula">1px = 1/96th inch (screen pixel)</div>
+                </div>
+                
+                <div class="unit-card" style="border-left-color: #4ecdc4;">
+                    <div class="unit-name">pt - Points</div>
+                    <div class="demo-box" style="width: 72pt;">72pt wide</div>
+                    <div class="demo-box" style="font-size: 20pt;">20pt text</div>
+                    <code>font-size: 20pt;</code>
+                    <div class="formula">1pt = 1/72 inch (Print media)</div>
+                </div>
+                
+                <div class="unit-card" style="border-left-color: #45b7d1;">
+                    <div class="unit-name">pc - Picas</div>
+                    <div class="demo-box" style="width: 6pc;">6pc wide</div>
+                    <div class="demo-box" style="font-size: 2pc;">2pc text</div>
+                    <code>width: 6pc;</code>
+                    <div class="formula">1pc = 12pt = 1/6 inch</div>
+                </div>
+                
+                <div class="unit-card" style="border-left-color: #96ceb4;">
+                    <div class="unit-name">in - Inches</div>
+                    <div class="demo-box" style="width: 1in;">1in wide</div>
+                    <div class="demo-box" style="width: 2in;">2in wide</div>
+                    <code>width: 1in;</code>
+                    <div class="formula">Physical inch (depends on screen DPI)</div>
+                </div>
+                
+                <div class="unit-card" style="border-left-color: #feca57;">
+                    <div class="unit-name">cm - Centimeters</div>
+                    <div class="demo-box" style="width: 2cm;">2cm wide</div>
+                    <div class="demo-box" style="width: 4cm;">4cm wide</div>
+                    <code>width: 2cm;</code>
+                    <div class="formula">Physical centimeter</div>
+                </div>
+                
+                <div class="unit-card" style="border-left-color: #ff9f4a;">
+                    <div class="unit-name">mm - Millimeters</div>
+                    <div class="demo-box" style="width: 20mm;">20mm wide</div>
+                    <div class="demo-box" style="width: 40mm;">40mm wide</div>
+                    <code>width: 20mm;</code>
+                    <div class="formula">Physical millimeter (10mm = 1cm)</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 2. Relative Units - Font Based -->
+        <div class="section">
+            <h2>2. Relative Units (Font Based)</h2>
+            <div class="demo-grid">
+                <div class="unit-card" style="border-left-color: #ff6b6b;">
+                    <div class="unit-name">rem - Root EM</div>
+                    <div class="demo-box" style="font-size: 1rem;">1rem (16px default)</div>
+                    <div class="demo-box" style="font-size: 1.5rem;">1.5rem (24px)</div>
+                    <div class="demo-box" style="width: 10rem;">width: 10rem</div>
+                    <code>font-size: 1.5rem;</code>
+                    <div class="formula">Relative to root (&lt;html&gt;) font-size</div>
+                </div>
+                
+                <div class="unit-card" style="border-left-color: #4ecdc4;">
+                    <div class="unit-name">em - EM (Parent relative)</div>
+                    <div class="parent-box" style="font-size: 20px;">
+                        Parent: 20px
+                        <div class="demo-box" style="font-size: 1.5em;">1.5em = 30px</div>
+                        <div class="demo-box" style="font-size: 2em;">2em = 40px</div>
+                    </div>
+                    <code>font-size: 1.5em;</code>
+                    <div class="formula">Relative to parent element's font-size</div>
+                </div>
+                
+                <div class="unit-card" style="border-left-color: #96ceb4;">
+                    <div class="unit-name">ex - x-height</div>
+                    <div class="demo-box" style="height: 3ex; line-height: 3ex;">x</div>
+                    <div class="demo-box" style="font-size: 2ex;">2ex text</div>
+                    <code>height: 3ex;</code>
+                    <div class="formula">Relative to 'x' character height</div>
+                </div>
+                
+                <div class="unit-card" style="border-left-color: #feca57;">
+                    <div class="unit-name">ch - Character unit</div>
+                    <div class="demo-box" style="width: 20ch;">20ch wide text here</div>
+                    <div class="demo-box" style="width: 30ch;">30ch wide text example</div>
+                    <code>width: 20ch;</code>
+                    <div class="formula">Width of '0' character</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 3. Viewport Units -->
+        <div class="section">
+            <h2>3. Viewport Units (Screen Relative)</h2>
+            <div class="demo-grid">
+                <div class="unit-card" style="border-left-color: #ff6b6b;">
+                    <div class="unit-name">vw - Viewport Width</div>
+                    <div class="demo-box" style="width: 25vw;">25% of viewport width</div>
+                    <div class="demo-box" style="font-size: 5vw;">5vw text</div>
+                    <code>width: 25vw;</code>
+                    <div class="formula">1vw = 1% of viewport width</div>
+                </div>
+                
+                <div class="unit-card" style="border-left-color: #4ecdc4;">
+                    <div class="unit-name">vh - Viewport Height</div>
+                    <div class="demo-box" style="height: 15vh;">15vh height</div>
+                    <div class="demo-box" style="font-size: 5vh;">5vh text</div>
+                    <code>height: 15vh;</code>
+                    <div class="formula">1vh = 1% of viewport height</div>
+                </div>
+                
+                <div class="unit-card" style="border-left-color: #96ceb4;">
+                    <div class="unit-name">vmin - Viewport Minimum</div>
+                    <div class="demo-box" style="width: 20vmin; height: 20vmin;">20vmin</div>
+                    <div class="demo-box" style="font-size: 4vmin;">4vmin text</div>
+                    <code>width: 20vmin;</code>
+                    <div class="formula">1vmin = 1% of smaller viewport dimension</div>
+                </div>
+                
+                <div class="unit-card" style="border-left-color: #feca57;">
+                    <div class="unit-name">vmax - Viewport Maximum</div>
+                    <div class="demo-box" style="width: 20vmax; height: 20vmax;">20vmax</div>
+                    <div class="demo-box" style="font-size: 4vmax;">4vmax text</div>
+                    <code>width: 20vmax;</code>
+                    <div class="formula">1vmax = 1% of larger viewport dimension</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 4. Percentage Units -->
+        <div class="section">
+            <h2>4. Percentage Units (%)</h2>
+            <div class="parent-box" style="width: 400px; background: #e9ecef;">
+                Parent: 400px
+                <div class="demo-box" style="width: 50%; background: #667eea;">50% = 200px</div>
+                <div class="demo-box" style="width: 75%; background: #764ba2;">75% = 300px</div>
+                <div class="demo-box" style="width: 100%; background: #feca57;">100% = 400px</div>
+            </div>
+            <code>width: 50%; /* Relative to parent */</code>
+            <div class="formula">Percentage = Relative to parent element's property</div>
+        </div>
+        
+        <!-- 5. Fraction Units -->
+        <div class="section">
+            <h2>5. Fraction Units (CSS Grid Only)</h2>
+            <div class="relative-demo">
+                <div style="display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 10px; margin-top: 10px;">
+                    <div class="demo-box" style="background: #ff6b6b;">1fr</div>
+                    <div class="demo-box" style="background: #4ecdc4;">2fr</div>
+                    <div class="demo-box" style="background: #96ceb4;">1fr</div>
+                </div>
+                <code>grid-template-columns: 1fr 2fr 1fr;</code>
+                <div class="formula">fr = Fractional unit (divides available space proportionally)</div>
+            </div>
+        </div>
+        
+        <!-- 6. Modern CSS Units -->
+        <div class="section">
+            <h2>6. Modern CSS Units (New Features)</h2>
+            <div class="demo-grid">
+                <div class="unit-card" style="border-left-color: #ff6b6b;">
+                    <div class="unit-name">lvh - Large Viewport Height</div>
+                    <div class="demo-box" style="height: 10lvh;">10lvh</div>
+                    <code>height: 10lvh;</code>
+                    <div class="formula">Largest possible viewport (includes mobile address bar)</div>
+                </div>
+                
+                <div class="unit-card" style="border-left-color: #4ecdc4;">
+                    <div class="unit-name">svh - Small Viewport Height</div>
+                    <div class="demo-box" style="height: 10svh;">10svh</div>
+                    <code>height: 10svh;</code>
+                    <div class="formula">Smallest possible viewport (dynamic)</div>
+                </div>
+                
+                <div class="unit-card" style="border-left-color: #96ceb4;">
+                    <div class="unit-name">dvh - Dynamic Viewport Height</div>
+                    <div class="demo-box" style="height: 10dvh;">10dvh</div>
+                    <code>height: 10dvh;</code>
+                    <div class="formula">Changes dynamically as address bar appears/disappears</div>
+                </div>
+                
+                <div class="unit-card" style="border-left-color: #feca57;">
+                    <div class="unit-name">cqw - Container Query Width</div>
+                    <div style="container-type: inline-size; background: #e9ecef; padding: 10px;">
+                        <div style="width: 50cqw; background: #667eea; padding: 10px; color: white;">
+                            50% of container width
+                        </div>
+                    </div>
+                    <code>width: 50cqw;</code>
+                    <div class="formula">Relative to container width (new container queries)</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive Demo -->
+        <div class="section">
+            <h2>🎮 Interactive Demo - See Units in Action</h2>
+            <div class="relative-demo">
+                <button onclick="changeBaseFont()">Change Root Font Size (rem demo)</button>
+                <button onclick="resetBaseFont()">Reset</button>
+                <div id="remDemo" style="margin-top: 15px; padding: 15px; background: #e9ecef; border-radius: 8px;">
+                    <p style="font-size: 1rem;">This text is 1rem (changes with root)</p>
+                    <p style="font-size: 2rem;">This text is 2rem</p>
+                    <p style="font-size: 1.5rem;">This text is 1.5rem</p>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <label>Viewport Width Demo (vw):</label>
+                    <div style="width: 50vw; background: #667eea; padding: 10px; color: white; transition: all 0.3s;">
+                        This box is 50vw wide
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Comparison Table -->
+        <div class="section">
+            <h2>📊 Quick Reference Comparison</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Unit</th>
+                        <th>Type</th>
+                        <th>Relative To</th>
+                        <th>Best Used For</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>px</td><td>Absolute</td><td>Screen pixels</td><td>Borders, shadows, small details</td></tr>
+                    <tr><td>rem</td><td>Relative</td><td>Root font-size</td><td>Typography, spacing, layout</td></tr>
+                    <tr><td>em</td><td>Relative</td><td>Parent font-size</td><td>Component-specific scaling</td></tr>
+                    <tr><td>%</td><td>Relative</td><td>Parent property</td><td>Responsive widths, heights</td></tr>
+                    <tr><td>vw/vh</td><td>Relative</td><td>Viewport</td><td>Full-screen layouts, hero sections</td></tr>
+                    <tr><td>fr</td><td>Relative</td><td>Grid container</td><td>CSS Grid layouts</td></tr>
+                    <tr><td>ch</td><td>Relative</td><td>Character '0'</td><td>Text containers, form inputs</td></tr>
+                    <tr><td>ex</td><td>Relative</td><td>x-height</td><td>Typography alignment</td></tr>
+                    <tr><td>pt/pc/in</td><td>Absolute</td><td>Physical measurements</td><td>Print styles</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+        function changeBaseFont() {
+            document.documentElement.style.fontSize = '20px';
+            alert('Root font-size changed to 20px! Notice the rem-based text sizes changed.');
+        }
+        
+        function resetBaseFont() {
+            document.documentElement.style.fontSize = '';
+            alert('Root font-size reset to default (16px)');
+        }
+        
+        // Log viewport info
+        window.addEventListener('resize', () => {
+            console.log(`Viewport: ${window.innerWidth}px × ${window.innerHeight}px`);
+        });
+    </script>
+</body>
+</html>
